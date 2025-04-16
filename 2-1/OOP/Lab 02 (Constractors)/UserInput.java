@@ -1,9 +1,8 @@
 import java.util.Scanner;
 class Employee{
-    int id;
+    int id, Salary;
     String name;
-    long Salary;
-    Employee(int id, String name, long Salary){
+    Employee(int id, String name, int Salary){
         this.id = id;
         this.name = name;
         this.Salary = Salary;
@@ -23,7 +22,7 @@ public class UserInput {
         System.out.print("Enter Employee Name: ");
         String name = sc.nextLine();
         System.out.print("Enter the Salary: ");
-        long salary = sc.nextLong();
+        int salary = sc.nextInt();
         sc.close();
         Employee emp = new Employee(id, name, salary);
         emp.Display();
