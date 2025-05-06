@@ -6,10 +6,14 @@ typedef struct Node{
     struct Node* address;
 }Node;
 
-int main(){
+void create(int n){
     Node* initializeNode = (Node*)malloc(sizeof(Node));
-    initializeNode->data = 15;
+    initializeNode->data = n;
     initializeNode->address = NULL;
-    printf("Square of the data is %d\n", (initializeNode->data)*(initializeNode->data));
+    printf("Square of %d the data is %d\n", n, (initializeNode->data)*(initializeNode->data));
     free(initializeNode);
+}
+int main(){
+    create(50);
+    return 0;
 }
