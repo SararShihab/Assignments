@@ -23,8 +23,8 @@ public class StaticInheritance {
         Child.staticMethod();
 
         System.out.println("Access via Parent reference to Child object:");
-        Parent ref = new Child();
-        System.out.println(ref.staticVar);     
-        ref.staticMethod();           
+        
+        System.out.println(Parent.staticVar);     
+        Parent.staticMethod();           
     }
 }
