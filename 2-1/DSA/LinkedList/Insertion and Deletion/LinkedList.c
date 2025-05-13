@@ -10,7 +10,8 @@ typedef struct linkList {
     node* head;  
 } linkList;  
   
-linkList lst;  
+linkList lst;
+  
   
 node* createNode(int data) {  
     node* newNode = (node*)malloc(sizeof(node));  
@@ -80,10 +81,12 @@ int main() {
     lst.head = NULL;  
   
     append(10);  
-    append(20);  
-    prepend(5);  
-    insertAfter(10, 15);  
+    append(50);  
+    prepend(7);  
+    insertAfter(50, 15);  
   
+    printList();
+    deleteNode(6);
     printList();
   
     return 0;  
