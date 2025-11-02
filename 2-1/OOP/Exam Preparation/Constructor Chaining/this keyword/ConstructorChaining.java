@@ -7,10 +7,14 @@ class student{
         System.out.println("Parameterized constructor called:");
         System.out.println("Reg: "+reg+", Name: "+name);
     }
+    void show(){
+        System.out.println("Executed Successfully");
+    }
 }
 
 public class ConstructorChaining {
     public static void main(String[] args){
         student s = new student();
+        s.show();
     }
 }
