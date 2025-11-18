@@ -13,9 +13,6 @@ node *createNode(int data){
     return newNode;
 }
 
-void printList(){
-    
-}
 
 int main(){
     node *first = createNode(5);
