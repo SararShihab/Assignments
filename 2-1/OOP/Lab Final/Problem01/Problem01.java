@@ -5,11 +5,11 @@ class Student{
     double roll, gpa;
     
     void input(Scanner sc){
-        System.out.println("Enter Name: ");
+        System.out.print("Enter Name: ");
         name = sc.nextLine();
-        System.out.println("Enter Roll: ");
+        System.out.print("Enter Roll: ");
         roll = sc.nextDouble();
-        System.out.println("Enter GPA: ");
+        System.out.print("Enter GPA: ");
         gpa = sc.nextDouble();
         sc.nextLine();
     }
@@ -36,7 +36,7 @@ public class Problem01 {
         }
         System.out.println("===Details===");
         for(int i = 0; i < n; i++){
-            System.out.println("--tudent"+(i+1)+"--");
+            System.out.println("--Student"+(i+1)+"--");
             
             s[i].displayDitails();
         }
