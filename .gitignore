@@ -10,3 +10,10 @@
 /2-1/OOP/Lab Final/Problem23/build/
 /2-1/OOP/Lab Final/Problem25/nbproject/private/
 /2-1/OOP/Lab Final/Problem25/build/
+
+.DS_Store
+node_modules
+.env
+dist
+build
+*.log
