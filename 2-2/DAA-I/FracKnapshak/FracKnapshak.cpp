@@ -1,24 +1,18 @@
-#include<iostream>
-#include<iomanip>
-#include<vector>
-#include<unordered_map>
-#include<tuple>
-#include<algorithm>
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <tuple>
+#include <algorithm>
+
 using namespace std;
 
 class Knapshak {
 private:
     vector<tuple<char, int, int>> items;
-    vector<char> uniqueItems;
-    unordered_map<char, bool> exists;
 
 public:
     void addItem(char it, int p, int w) {
         items.push_back({it, p, w});
-        if (!exists[it]) {
-            uniqueItems.push_back(it);
-            exists[it] = true;
-        }
     }
 
     void solve(int capacity) {
@@ -45,7 +39,7 @@ public:
                 double fractionProfit = p * ((double)remaining / w);
                 totalProfit += fractionProfit;
 
-                cout << it << " \t " << remaining << "\t   (f) " << fixed << setprecision(2) << fractionProfit << endl;
+                cout << it << " \t " << remaining << " \t   (f)  " << fixed << setprecision(2) << fractionProfit << endl;
 
                 currentWeight = capacity;
                 break;
@@ -59,8 +53,8 @@ public:
 };
 
 int main() {
-    int E;
-    cin >> E;
+    int n;
+    cin >> n;
 
     Knapshak bag;
 
@@ -77,3 +71,16 @@ int main() {
     bag.solve(capacity);
     return 0;
 }
+
+
+/*
+7
+1 12 3
+2 5 1
+3 16 4
+4 7 2
+5 9 9
+6 11 4
+7 6 3
+15
+*/
