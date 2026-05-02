@@ -57,10 +57,12 @@ public:
 
 int main() {
     int n;
+    cout << "Enter number of items: ";
     cin >> n;
 
     Knapshak bag;
 
+    cout << "Enter items (item profit weight):" << endl;
     for (int i = 0; i < n; i++) {
         char it;
         int p, w;
@@ -69,6 +71,7 @@ int main() {
     }
 
     int capacity;
+    cout << "Enter capacity: ";
     cin >> capacity;
 
     bag.solve(capacity);
