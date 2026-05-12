@@ -56,7 +56,6 @@ public:
             cout << u << " ";
 
             for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {
-
                 if (!visited[*it]) {
                     visited[*it] = true;
                     s.push(*it);
