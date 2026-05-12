@@ -43,23 +43,27 @@ public:
         unordered_map<char, bool> visited;
         stack<char> s;
 
+        visited[startNode] = true;
         s.push(startNode);
 
         cout << "\n---------------------------------" << endl;
         cout << "DFS Traversal: ";
+
         while (!s.empty()) {
             char u = s.top();
             s.pop();
 
-            if (!visited[u]) {
-                cout << u << " ";
-                visited[u] = true;
-            }
+            cout << u << " ";
 
             for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {
-                if (!visited[*it]) s.push(*it);
+
+                if (!visited[*it]) {
+                    visited[*it] = true;
+                    s.push(*it);
+                }
             }
         }
+
         cout << "\n---------------------------------" << endl;
     }
 };
