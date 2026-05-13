@@ -13,7 +13,7 @@ class Knapshak{
         int n = items.size();
 
         cout<<"\n----------------------------------------"<<endl;
-        cout<<"Object \t Weight \t Profit"<<endl;
+        cout<<"Item \t Weight \t Profit"<<endl;
         cout<<"----------------------------------------"<<endl;
 
         int res = dp[n][capacity];
@@ -21,9 +21,9 @@ class Knapshak{
 
         for(int i=n; i>0 && res>0; i--){
             if(res != dp[i-1][w]){
-                auto [obj, p, wt] = items[i-1];
+                auto [it, p, wt] = items[i-1];
 
-                cout << obj << " \t " << wt << " \t\t " << p << endl;
+                cout << it << " \t " << wt << " \t\t " << p << endl;
 
                 res -= p;
                 w -= wt;
@@ -36,8 +36,8 @@ class Knapshak{
     }
 
     public:
-    void addItem(char obj, int p, int w){
-        items.push_back({obj, p, w});
+    void addItem(char it, int p, int w){
+        items.push_back({it, p, w});
     }
 
     void solve(int capacity){
@@ -46,7 +46,7 @@ class Knapshak{
         vector<vector<int>> dp(n+1, vector<int>(capacity+1, 0));
 
         for(int i=1; i<=n; i++){
-            auto [obj, p, w] = items[i-1];
+            auto [it, p, w] = items[i-1];
 
             for(int j=0; j<=capacity; j++){
                 if(w<=j){
@@ -68,12 +68,12 @@ int main(){
 
     Knapshak bag;
 
-    cout << "Enter items (object profit weight):" << endl;
+    cout << "Enter items (item profit weight):" << endl;
     for(int i = 0; i < n; i++){
-        char obj;
+        char it;
         int p, w;
-        cin >> obj >> p >> w;
-        bag.addItem(obj, p, w);
+        cin >> it >> p >> w;
+        bag.addItem(it, p, w);
     }
 
     int capacity;
